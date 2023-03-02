@@ -15,12 +15,18 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 
 export class CutomInputComponent implements ControlValueAccessor {
+  onFileSelected(event: any): void {
+    const file = event.target.files[0];
+    this.onChange(file);
+  }
+  showInput:boolean = false;
   constructor(){}
   onChange: any = () => {};
   onTouch: any = () => {};
   val= "";
 
-
+  @Input() inputType!: string;
+  @Input() type: string = 'text';
 
   set value(val:any){ // this value is updated by programmatic changes
   if  (val!==undefined && this.val !==val){

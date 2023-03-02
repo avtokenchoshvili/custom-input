@@ -1,5 +1,7 @@
-<app-cutom-input
+<app-cutom-input type="text"
   [(ngModel)]="external"
   name="externalVal"
   #validations="ngModel"></app-cutom-input>
 <p>{{validations.control  | json}}</p>
+<app-cutom-input type="text" [(ngModel)]="external"></app-cutom-input>
+<app-cutom-input type="date" ></app-cutom-input>
